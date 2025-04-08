@@ -1,10 +1,12 @@
 import React from "react";
-import Login from "./MainComponents/Login";  // Ensure this path is correct
+// import Login from "./MainComponents/Login";
+import SingUp from "./MainComponents/SingUp";
 import "./App.css";
 function App() {
   return (
     <div>
-      <Login />
+      {/* <Login /> */}
+      <SingUp />
     </div>
   );
 }
