@@ -12,10 +12,10 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0; /* ⬅️ This puts it on the left side */
+    left: 0; 
     width: 4.5rem;
     height: 100vh;
-    background-color: #212529; /* Bootstrap dark bg */
+    background-color: #212529;
     z-index: 1030;
     display: flex;
     flex-direction: column;
