@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../SubComponents/Stock.css"; // Confirm path is correct
-import SideBar from "../common/SideBar"; // Adjusted path if needed
+import "../SubComponents/Stock.css";
+import SideBar from "../common/SideBar";
 
 function Stock() {
+
+    const [stockdata, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5001/api/allStock').then((response) => {
+            setData(response.data);
+        })
+        .catch(error => {
+            console.log('Error fatching data',error);
+        })
+    }, []);
+
     return (
         <div className="d-flex">
             <SideBar />
@@ -22,60 +35,17 @@ function Stock() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Inverter</td>
-                            <td>cat1</td>
-                            <td>Store name</td>
-                            <td>Stock adjustment</td>
-                            <td>80/100</td>
-                            <td>Completed</td>
-                        </tr>
-                        <tr classNamelass="active-row">
-                            <td>002</td>
-                            <td>Inverter</td>
-                            <td>cat1</td>
-                            <td>Store name</td>
-                            <td>Stock adjustment</td>
-                            <td>80/100</td>
-                            <td>Completed</td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Inverter</td>
-                            <td>cat1</td>
-                            <td>Store name</td>
-                            <td>Stock adjustment</td>
-                            <td>80/100</td>
-                            <td>Completed</td>
-                        </tr>
-                        <tr>
-                            <td>004</td>
-                            <td>Inverter</td>
-                            <td>cat1</td>
-                            <td>Store name</td>
-                            <td>Stock adjustment</td>
-                            <td>80/100</td>
-                            <td>Completed</td>
-                        </tr>
-                        <tr>
-                            <td>005</td>
-                            <td>Inverter</td>
-                            <td>cat1</td>
-                            <td>Store name</td>
-                            <td>Stock adjustment</td>
-                            <td>80/100</td>
-                            <td>Completed</td>
-                        </tr>
-                        <tr>
-                            <td>006</td>
-                            <td>Inverter</td>
-                            <td>cat1</td>
-                            <td>Store name</td>
-                            <td>Stock adjustment</td>
-                            <td>80/100</td>
-                            <td>Completed</td>
-                        </tr>
+                        {stockdata.map((Stock) => (
+                            <tr>
+                                <td>{Stock.id}</td>
+                                <td>{Stock.product}</td>
+                                <td>{Stock.category}</td>
+                                <td>{Stock.sales}</td>
+                                <td>{Stock.instruction}</td>
+                                <td>{Stock.items}</td>
+                                <td>{Stock.status}</td>
+                            </tr>
+                        ))}
 
                     </tbody>
                 </table>
