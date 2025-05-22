@@ -37,7 +37,7 @@ function Stock() {
                     <tbody>
                         {stockdata.map((Stock) => (
                             <tr>
-                                <td>{Stock.id}</td>
+                                <td>{Stock._id}</td>
                                 <td>{Stock.product}</td>
                                 <td>{Stock.category}</td>
                                 <td>{Stock.sales}</td>
