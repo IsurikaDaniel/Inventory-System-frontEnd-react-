@@ -1,4 +1,10 @@
+.topFrame {
+    margin-bottom: 30px;
+     
+}
+
 .styled-table {
+    margin-top: 30px;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;

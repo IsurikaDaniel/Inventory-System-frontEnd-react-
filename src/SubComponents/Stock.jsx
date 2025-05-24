@@ -13,15 +13,25 @@ function Stock() {
         axios.get('http://localhost:5001/api/allStock').then((response) => {
             setData(response.data);
         })
-        .catch(error => {
-            console.log('Error fatching data',error);
-        })
+            .catch(error => {
+                console.log('Error fatching data', error);
+            })
     }, []);
 
     return (
         <div className="d-flex">
             <SideBar />
+
+            {/* <div className="topFrame ">
+                <h2>In Stock</h2>
+            </div> */}
+
             <div className="stockContainer p-3">
+
+                <div className="topFrame ">
+                    <h2>In Stock</h2>
+                </div>
+
                 <table className="styled-table">
                     <thead>
                         <tr>
