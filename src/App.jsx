@@ -2,7 +2,8 @@ import React from "react";
 // import Login from "./MainComponents/Login";
 // import SingUp from "./MainComponents/SingUp";
 // import SideBar from "./common/SideBar";
-import Stock from "./SubComponents/Stock"; // Ensure path is correct
+// import Stock from "./SubComponents/Stock"; 
+import Orders from "./SubComponents/Orders";
 import "./App.css";
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
       {/* <Login /> */}
       {/* <SingUp /> */}
       {/* <SideBar /> */}
-      <Stock />
+      {/* <Stock /> */}
+      <Orders />
     </div>
   );
 }
